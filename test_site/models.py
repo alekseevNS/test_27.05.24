@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+
+class NotesModel(models.Model):
+    text: models.TextField = models.TextField()

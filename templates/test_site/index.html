@@ -7,5 +7,17 @@
 <body>
 <h1>Просто пример</h1>
 <p>Просто пример</p>
+<hr/>
+<form action="/" method="post">
+    {% csrf_token %}
+    {{ note_form.as_p }}
+    <button type="submit">Отправить заметку на сервер</button>
+</form>
+<hr/>
+<ul>
+    {% for note_data in notes_data %}
+        <li>{{ note_data.text }}</li>
+    {% endfor %}
+</ul>
 </body>
 </html>
